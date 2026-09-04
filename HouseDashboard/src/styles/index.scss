@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "themes/index";
+@import "vendors/index";
+@import "base/index";
+@import "components/index";
+@import "helpers/index";
+@import "fonts/aeonik/css/Aeonik";

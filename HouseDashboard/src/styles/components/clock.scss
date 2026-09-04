@@ -1,0 +1,13 @@
+.clock {
+  color: $primary-text-color;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    svg {
+      vertical-align: baseline;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.weather {
+  color: $primary-text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-weight: bold;
+  }
+  &__info {
+    span {
+      padding: 1em;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: $medium-spacing;
+    justify-content: space-between;
+  }
+  &--cold {
+    color: aqua;
+  }
+  &--hot {
+    color: crimson;
+  }
+}

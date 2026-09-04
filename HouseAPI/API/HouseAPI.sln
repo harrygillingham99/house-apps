@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House.API", "House.API.csproj", "{51DFA9C4-1D70-44D8-B332-5B83B788AD64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseTests", "..\HouseTests\HouseTests.csproj", "{6351EAA8-B371-4A61-B81E-FF9843902A5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House.HLL", "..\HLL\House.HLL.csproj", "{4CA1ABF4-CC7F-4A80-B9C0-B9A9ACC8310B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House.DAL", "..\DAL\House.DAL.csproj", "{E2EFBACE-FAD4-48B6-BC76-7741057A946B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73EB744F-3F0A-4A2B-B8C6-CB4B722513CB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.filenesting.json = .filenesting.json
+		RuleSet.ruleset = RuleSet.ruleset
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "House.SignalR", "..\House.SignalR\House.SignalR.csproj", "{76BAEFC2-1345-4262-AB43-EAD352DE5495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "House.Objects", "..\House.Objects\House.Objects.csproj", "{F8C4EDB6-9F44-4916-9813-BB28EB3B0572}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51DFA9C4-1D70-44D8-B332-5B83B788AD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DFA9C4-1D70-44D8-B332-5B83B788AD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DFA9C4-1D70-44D8-B332-5B83B788AD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DFA9C4-1D70-44D8-B332-5B83B788AD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6351EAA8-B371-4A61-B81E-FF9843902A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6351EAA8-B371-4A61-B81E-FF9843902A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6351EAA8-B371-4A61-B81E-FF9843902A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6351EAA8-B371-4A61-B81E-FF9843902A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA1ABF4-CC7F-4A80-B9C0-B9A9ACC8310B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA1ABF4-CC7F-4A80-B9C0-B9A9ACC8310B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA1ABF4-CC7F-4A80-B9C0-B9A9ACC8310B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA1ABF4-CC7F-4A80-B9C0-B9A9ACC8310B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2EFBACE-FAD4-48B6-BC76-7741057A946B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EFBACE-FAD4-48B6-BC76-7741057A946B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EFBACE-FAD4-48B6-BC76-7741057A946B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EFBACE-FAD4-48B6-BC76-7741057A946B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BAEFC2-1345-4262-AB43-EAD352DE5495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BAEFC2-1345-4262-AB43-EAD352DE5495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BAEFC2-1345-4262-AB43-EAD352DE5495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BAEFC2-1345-4262-AB43-EAD352DE5495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C4EDB6-9F44-4916-9813-BB28EB3B0572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C4EDB6-9F44-4916-9813-BB28EB3B0572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C4EDB6-9F44-4916-9813-BB28EB3B0572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C4EDB6-9F44-4916-9813-BB28EB3B0572}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C079AA5-9093-4234-981D-06CC5DBDD25E}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal

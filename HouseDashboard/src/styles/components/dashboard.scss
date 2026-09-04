@@ -1,0 +1,42 @@
+.dashboard {
+  height: 100%; /* Set dashboard to take up entire viewport */
+  padding: $medium-spacing;
+
+  .dash-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .dash-item {
+      @apply rounded-xl;
+
+      padding: $medium-spacing;
+      background-color: #1d1d1d;
+      box-shadow: 10px 10px #0f0f0f;
+      color: $primary-text-color;
+      text-align: center;
+      margin: $medium-spacing;
+      flex-grow: 1;
+
+      &--grow {
+        flex-grow: 2;
+      }
+    }
+  }
+}
+
+// .dashboard {
+//   height: 100vh; /* Set dashboard to take up entire viewport */
+
+//   .dash-row {
+//     height: 50%;
+//     .dash-item {
+//       padding: 1em;
+//       background-color: #1d1d1d;
+//       box-shadow: 10px 10px #0f0f0f;
+//       color: #ffffffde;
+//       text-align: center;
+//       margin: 2em;
+//     }
+//   }
+// }

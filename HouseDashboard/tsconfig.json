@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "baseUrl": "./src/scripts/app",
+    "paths": {
+      "@appRoot/*": ["appRoot/*"],
+      //   "@state/*": ["state/*"],
+      "@components/*": ["components/*"]
+      //   "@containers/*": ["containers/*"],
+      //   "@form/*": ["form/*"],
+      //   "@models/*": ["models/*"],
+      //   "@utils/*": ["utils/*"],
+      //   "@shared/*": ["shared/*"],
+      //   "@hooks/*": ["hooks/*"],
+      //   "@api/*": ["services/client/*"],
+      //   "@services/*": ["services/*"],
+      //   "@config/*": ["config/*"],
+      //   "@routes/*": ["routes/*"],
+      //   "@appTypes/*": ["types/*"],
+      //   "@auth/*": ["services/auth/*"],
+      //   "@hoc/*": ["hoc/*"],
+      //   "@images/*": ["../../images/*"],
+      //   "@constants/*": ["constants/*"]
+    },
+    "typeRoots": ["./node_modules/@types/", "assets/scripts/app/index.d.ts"]
+  },
+  "exclude": ["node_modules", "webpack", "wwwroot", "webpack.config.js"],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

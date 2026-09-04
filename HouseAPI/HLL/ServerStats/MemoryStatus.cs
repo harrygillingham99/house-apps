@@ -9,6 +9,11 @@ namespace House.HLL.ServerStats
     {
         public IEnumerable<Status> GetMemoryInfo()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+               yield break;
+            }
+
             var search = new ManagementObjectSearcher("root\\CIMV2", "Select TotalVisibleMemorySize, FreePhysicalMemory from Win32_OPeratingSystem");
 
             foreach (var x in search.Get())

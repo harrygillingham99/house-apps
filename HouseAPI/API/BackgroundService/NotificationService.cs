@@ -35,14 +35,15 @@ namespace House.API.BackgroundService
 
                     //Notify all connected clients with new wallboard info
                     await processor.Notify();
-
-                    await Task.Delay(10000, cancellationToken);
-
                 }
                 catch (Exception ex)
                 {
                     Log.Error(ex,
                         $"Error occurred in Hosted Service");
+                }
+                finally
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(20), cancellationToken);
                 }
             }
 

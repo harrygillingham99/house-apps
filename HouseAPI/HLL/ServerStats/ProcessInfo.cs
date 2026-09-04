@@ -9,6 +9,11 @@ namespace House.HLL.ServerStats
     {
         public IEnumerable<ProcessInfoResult> GetProcessInfo()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+               yield break;
+            }
+            
             var search = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Process");
 
             foreach (var x in search.Get())

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:10 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 COPY ["API/House.API.csproj", "API/"]
@@ -13,7 +13,7 @@ COPY . .
 WORKDIR "/src/API"
 RUN dotnet publish "House.API.csproj" -c Release -o /app/publish --no-restore
 
-FROM mcr.microsoft.com/dotnet/aspnet:10 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 
 COPY --from=build /app/publish .

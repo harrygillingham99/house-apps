@@ -1,21 +1,25 @@
 # syntax=docker/dockerfile:1
 
 # ---- Build stage ----
+FROM node:18-bullseye-slim AS node-build
+WORKDIR /src
+
+COPY package.json package-lock.json* ./
+RUN npm install --force
+
+# ---- .NET SDK stage ----
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Install Node.js (required by the csproj build target that runs webpack)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y --no-install-recommends nodejs \
-    && rm -rf /var/lib/apt/lists/*
+# Copy node binaries and modules from node-build stage
+COPY --from=node-build /usr/local/bin /usr/local/bin
+COPY --from=node-build /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node-build /src/node_modules ./node_modules
+COPY package.json package-lock.json* ./
 
-# Restore .NET dependencies first for better layer caching
+# Restore .NET dependencies
 COPY front-end.csproj ./
 RUN dotnet restore front-end.csproj
-
-# Restore npm dependencies for better layer caching
-COPY package.json package-lock.json* ./
-RUN npm install --force
 
 # Copy the rest of the source and publish (Release build runs "npm run prod" via csproj target)
 COPY . .

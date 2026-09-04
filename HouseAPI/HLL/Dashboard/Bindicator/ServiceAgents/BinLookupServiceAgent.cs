@@ -23,9 +23,17 @@ namespace House.HLL.Dashboard.Bindicator.ServiceAgents
 
         public Task<BinLookup> Lookup(string uprn)
         {
-            var request = new RestRequest { Method = Method.Get }
-                .AddQueryParameter(nameof(uprn), uprn);
-            return Retry.Retry.DoAsync(() => GetBinData(request), TimeSpan.FromSeconds(1));
+            try
+            {
+                var request = new RestRequest { Method = Method.Get }
+                    .AddQueryParameter(nameof(uprn), uprn);
+                return Retry.Retry.DoAsync(() => GetBinData(request), TimeSpan.FromSeconds(1));
+            }
+            catch (Exception ex)
+            {
+                Serilog.Log.Error(ex, $"Error occurred in {nameof(BinLookupServiceAgent)}.{nameof(Lookup)}");
+                return Task.FromResult(new BinLookup([]));
+            }
         }
 
         private Task<BinLookup> GetBinData(RestRequest request)

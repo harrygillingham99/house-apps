@@ -14,7 +14,15 @@ namespace House.HLL.Dashboard.Bindicator.Models
         {
             BinLookupDto ResolveBin(string binType) =>
                 dto.FirstOrDefault(bin =>
-                bin.BinType.Equals(binType, StringComparison.InvariantCultureIgnoreCase));
+                bin.BinType.Equals(binType, StringComparison.InvariantCultureIgnoreCase)) 
+                ?? new BinLookupDto
+                {
+                    BinType = binType,
+                    PdfLink = string.Empty,
+                    Communal = false,
+                    Next = DateTime.MinValue,
+                    Subsequent = DateTime.MinValue
+                };
 
             Rubbish = new Bin(ResolveBin("rubbish"));
             Recycling = new Bin(ResolveBin("recycling"));

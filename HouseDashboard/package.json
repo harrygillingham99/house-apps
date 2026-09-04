@@ -85,7 +85,7 @@
     "classnames": "^2.3.2",
     "daisyui": "^2.50.1",
     "dayjs": "^1.11.7",
-    "dompurify": "^3.0.0",
+    "dompurify": "^3.4.13",
     "file-loader": "^6.2.0",
     "file-system": "^2.2.2",
     "formik": "^2.2.9",

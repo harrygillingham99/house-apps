@@ -60,7 +60,7 @@ services:
       Logging__LogLevel__Microsoft: "Warning"
       Logging__LogLevel__Microsoft.Hosting.Lifetime: "Information"
       AllowedHosts: "*"
-      AppSettings__ApiUrl: "${DASHBOARD_API_URL:-http://192.168.1.100:82}"
+      AppSettings__ApiUrl: "${DASHBOARD_API_URL:-http://api:8080}"
       AppSettings__SecurityCamUrl: "${DASHBOARD_SECURITY_CAM_URL:-http://192.168.1.123:8081/}"
       AppSettings__BlueMapUrl: "${DASHBOARD_BLUEMAP_URL:-http://192.168.1.69:8100/#world:-15:83:-57:0:2.36:1.52:0:0:free}"
       AppSettings__BinNoticePeriod: "${DASHBOARD_BIN_NOTICE_PERIOD:-1.5}"

@@ -1,0 +1,6 @@
+[submodule "HouseAPI"]
+	path = HouseAPI
+	url = https://github.com/harrygillingham99/HouseAPI.git
+[submodule "HouseDashboard"]
+	path = HouseDashboard
+	url = https://github.com/harrygillingham99/HouseDashboard.git

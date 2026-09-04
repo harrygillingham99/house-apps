@@ -29,7 +29,7 @@ services:
       ConnectionStrings__OpenWeather: "https://api.openweathermap.org/data/2.5/weather"
       ConnectionStrings__UniTimetable: "https://timetable.bournemouth.ac.uk/student/getevents"
       ConnectionStrings__NewsApi: "http://newsapi.org/v2/top-headlines?country=gb&apiKey="
-      ConnectionStrings__ImagesFolder: "C://Users/Administrator/Documents/Sites/HouseAPI Images"
+      ConnectionStrings__ImagesFolder: "images"
       ConnectionStrings__CatTags: "https://cataas.com/api/tags"
       ConnectionStrings__GetCat: "https://cataas.com/cat/{0}"
       Lookup__Uprn: "${LOOKUP_UPRN:-100041084394}"
@@ -41,6 +41,8 @@ services:
       RadarrApi__Key: "${RADARR_API_KEY:-nope}"
       DbConnections__HouseSql: "${HOUSE_SQL_CONNECTION_STRING:-Server=sqlserver,1433;Database=House;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True;}"
     restart: unless-stopped
+    volumes:
+      - houseapi_images:/app/images
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
@@ -68,3 +70,4 @@ services:
 
 volumes:
   sqlserver_data:
+  houseapi_images:

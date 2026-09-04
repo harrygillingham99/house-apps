@@ -41,6 +41,8 @@ services:
       RadarrApi__Key: "${RADARR_API_KEY:-nope}"
       DbConnections__HouseSql: "${HOUSE_SQL_CONNECTION_STRING:-Server=sqlserver,1433;Database=House;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True;}"
     restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
 
   dashboard:
     build:
@@ -61,6 +63,8 @@ services:
       AppSettings__BlueMapUrl: "${DASHBOARD_BLUEMAP_URL:-http://192.168.1.69:8100/#world:-15:83:-57:0:2.36:1.52:0:0:free}"
       AppSettings__BinNoticePeriod: "${DASHBOARD_BIN_NOTICE_PERIOD:-1.5}"
     restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
 
 volumes:
   sqlserver_data:

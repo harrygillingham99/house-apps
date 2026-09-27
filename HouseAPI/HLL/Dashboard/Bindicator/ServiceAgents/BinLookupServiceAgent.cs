@@ -25,8 +25,8 @@ namespace House.HLL.Dashboard.Bindicator.ServiceAgents
         {
             try
             {
-                var request = new RestRequest { Method = Method.Get }
-                    .AddQueryParameter(nameof(uprn), uprn);
+                var request = new RestRequest { Method = Method.Post }
+                    .AddJsonBody(new { uprn = uprn });
                 return await Retry.Retry.DoAsync(() => GetBinData(request), TimeSpan.FromSeconds(1));
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace House.HLL.Dashboard.Bindicator.ServiceAgents
         {
             return _cache.GetOrAddAsync($"{GetType().FullName}_BinLookup", async () =>
             {
-                var result = await _lookupClient.GetAsync<List<BinLookupDto>>(request);
+                var result = await _lookupClient.PostAsync<ApiResponse>(request);
                 return new BinLookup(result);
             }, DateTimeOffset.Now.AddHours(1));
         }
